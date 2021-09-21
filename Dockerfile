@@ -10,6 +10,8 @@ RUN rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
 RUN rm -rf $ETCD_BIN 
 RUN mkdir -p $ETCD_BIN
 
+RUN pip install -y etcd3
+
 RUN dnf install -y python3
 
 RUN curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz -o /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
